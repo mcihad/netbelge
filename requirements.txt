@@ -1,0 +1,12 @@
+Django
+django-debug-toolbar
+django-minio-storage
+django-mptt
+django-mptt-admin
+django-rest-framework
+gunicorn
+minio
+pillow
+psycopg
+redis
+requests
