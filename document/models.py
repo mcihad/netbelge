@@ -148,7 +148,10 @@ def upload_to(instance, filename):
     path = path.replace("{yil}", str(instance.document.date.year))
     path = path.replace("{ay}", str(instance.document.date.month))
     path = path.replace("{gun}", str(instance.document.date.day))
-    path = path.replace("{belge_no}", instance.document.document_no)
+    path = path.replace(
+        "{belge_no}",
+        normalize_path(instance.document.document_no),
+    )
     return f"{path}/{filename}"
 
 

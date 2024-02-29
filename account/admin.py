@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html_join
 from django.utils.translation import gettext_lazy as _
+from django_mptt_admin.admin import DjangoMpttAdmin
 from mptt.admin import TreeRelatedFieldListFilter
 
 from document.models import DocumentType
@@ -15,7 +16,7 @@ class DepartmentFilter(TreeRelatedFieldListFilter):
 
 
 @admin.register(Department)
-class DepartmentAdmin(admin.ModelAdmin):
+class DepartmentAdmin(DjangoMpttAdmin):
     list_display = ("name", "parent", "path", "created_at")
     search_fields = ("name", "description")
     list_filter = (("parent", DepartmentFilter),)
